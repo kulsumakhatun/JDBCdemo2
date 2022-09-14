@@ -1,4 +1,5 @@
 package com.example.main;
+import com.example.dao.AddressDAO;
 import com.example.dao.StandardDAO;
 import com.example.data.Address;
 import com.example.data.Standard;
@@ -46,14 +47,27 @@ public class JDBCImpl {
         // class details will enter class table
         Address a1 = new Address(flatNo, buildingName, street, city, state, pinCode, country);
         Standard s1 = new Standard(standard, section);
-        Student student = new Student(name, rollNo,email,a1,s1);
+        Student student = new Student(name, rollNo, email, a1, s1);
 
         //call insert method to insert the value into student table
 
-        StandardDAO standardDAO = new StandardDAO();
+//        StandardDAO standardDAO = new StandardDAO();
+//        int generatedKey = 0;
+//        try {
+//            generatedKey = standardDAO.insertIntoStandard(s1);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("generatedKey =" + generatedKey);
+//    }
+        AddressDAO addressDAO = new AddressDAO();
+
         int generatedKey = 0;
         try {
-            generatedKey = standardDAO.insertIntoStandard(s1);
+            generatedKey = addressDAO.insertIntoAdress(a1);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -62,4 +76,5 @@ public class JDBCImpl {
         }
         System.out.println("generatedKey =" + generatedKey);
     }
-}
+    }
+

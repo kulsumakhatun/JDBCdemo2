@@ -45,7 +45,7 @@ public class Student {
         this.email = email;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
@@ -53,7 +53,7 @@ public class Student {
         this.address = address;
     }
 
-    public Standard getStandard() {
+    public String getStandard() {
         return standard;
     }
 
